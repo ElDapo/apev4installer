@@ -32,15 +32,6 @@ pip install pyOpenSSL==20.0.1 > nul
 echo Loading pip package: "anonfiles"
 pip install anonfiles > nul
 
-
-if exist .\vapev4\ (
-	echo Vape found.
-) else (
-	mkdir .\vapev4\
-	anon d https://anonfiles.com/T69aSbq8y2/VapeV4_zip
-	powershell Expand-Archive VapeV4.zip -DestinationPath .\vapev4\
-)
-
 cls
 
 
