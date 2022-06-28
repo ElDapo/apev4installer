@@ -29,9 +29,6 @@ pip install requests==2.21.0 > nul
 echo Loading pip package: "pyOpenSSL"
 pip install pyOpenSSL==20.0.1 > nul
 
-echo Loading pip package: "anonfiles"
-pip install anonfiles > nul
-
 cls
 
 
