@@ -5,15 +5,6 @@ title ApeV4 installer by eldapo
 set log=  [0m[[92m+[0m]
 set err=  [0m[[91m-[0m]
 
-powershell Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ElDapo/apev4installer/main/RunVape.bat" -OutFile "eldapo\SyncFile.bat" >NUL 2>NUL
-fc /b %0 "eldapo\SyncFile.bat" >NUL 2>NUL
-if %ERRORLEVEL% equ 1 (
-    echo %err% Newer version found. Updating script.
-    start /B "VAPE UPDATER - eldapo" "cmd /K /C copy eldapo\SyncFile.bat RunVape.bat"
-    start /B "" "%0"
-    exit
-)
-
 echo.
 echo [34m  .@@@@@@           ,@@@@@%% *@@@@@@@*       .@@@@@@@@@@@@@%%.   (@@@@@@@@@@@@@@( 
 echo [34m    @@@@@@         ,@@@@@# /@@@@@@@@@/      .@@@@@@@@@@@@@@@@/ (@@@@@@@@@@@@@@( 
@@ -224,17 +215,17 @@ if %ERRORLEVEL% equ 0 (
 )
 echo.
 
-echo Starting server.py to bypass verification.
+echo %log% Starting server.py to bypass verification.
 echo.
 start "SERVER CONSOLE - eldapo" %py% server.py
 
-echo Waiting for script to load...
+echo %log% Waiting for script to load...
 echo.
 timeout /t 5 /nobreak >NUL 2>NUL
 
-echo Starting Vape v4.
+echo %log% Starting Vape v4.
 echo.
 start "VAPE CONSOLE - eldapo" "./Vape_V4/Kangaroo Patcher.exe" Vape_V4.exe
 
-echo You can now close this window.
+echo %log% You can now close this window.
 pause >NUL 2>NUL
