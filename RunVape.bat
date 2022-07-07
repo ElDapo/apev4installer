@@ -5,12 +5,12 @@ title ApeV4 installer by eldapo
 set log=  [0m[[92m+[0m]
 set err=  [0m[[91m-[0m]
 
-powershell Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ElDapo/apev4installer/main/RunVape.bat" -OutFile "eldapo\SyncFile.bat"
-fc /b %0 "eldapo\SyncFile.bat" > nul
+powershell Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ElDapo/apev4installer/main/RunVape.bat" -OutFile "eldapo\SyncFile.bat" >NUL 2>NUL
+fc /b %0 "eldapo\SyncFile.bat" >NUL 2>NUL
 if %ERRORLEVEL% equ 1 (
     echo %err% Newer version found. Updating script.
     start /B "VAPE UPDATER - eldapo" "cmd /K /C copy eldapo\SyncFile.bat RunVape.bat"
-    start "" "%0"
+    start /B "" "%0"
     exit
 )
 
